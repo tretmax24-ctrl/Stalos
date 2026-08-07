@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="St. Aloysius Senior Secondary School Nabbingo (STALOS) — a mixed day and boarding Catholic school offering quality, affordable education since 1986.">
-    <meta name="theme-color" content="#1e3a8a">
+    <meta name="description" content="St. Aloysius Senior Secondary School Nabbingo (STALOS) — mixed day and boarding Catholic school since 1986.">
+    <meta name="theme-color" content="#0c1e3d">
     <title>STALOS | St. Aloysius Senior Secondary School Nabbingo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="interactive.css">
 </head>
 <body>
     <header class="site-header">
         <div class="container header-inner">
-            <a href="index.html" class="brand">STALOS</a>
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <i class="fas fa-bars"></i>
-            </button>
+            <a href="index.html" class="brand">ST<span>ALOS</span></a>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
             <nav role="navigation">
                 <ul class="nav-list">
                     <li><a href="index.html" class="active">Home</a></li>
@@ -33,84 +30,55 @@
     </header>
 
     <main>
-        <section class="hero" role="banner">
-            <div class="hero-content">
-                <span class="eyebrow">Nabbingo · Since 1986 · 40 years</span>
-                <h1>Knowledge is our strength</h1>
-                <p>St. Aloysius Senior Secondary School is a mixed day and boarding Catholic school providing quality, affordable education in the Archdiocese of Kampala.</p>
-                <div class="hero-actions">
-                    <a href="admissions.html" class="btn btn-primary">Apply Today</a>
-                    <a href="gallery.html" class="btn btn-secondary">See Campus Life</a>
-                </div>
-                <div class="hero-photos">
-                    <img src="images/111140400dcf49f77eac3135006e9619.webp" alt="STALOS formal class group" loading="lazy">
-                    <img src="images/c3d5e1a67b144c09a7540fd7436fcbb8.webp" alt="Netball champions" loading="lazy">
-                    <img src="images/87ed807f10e74881b6d8960ab9ebb9a3.webp" alt="Class in blue uniforms" loading="lazy">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <span class="eyebrow">Nabbingo · Founded 1986 · 40 Years</span>
+                        <h1>Knowledge is our strength</h1>
+                        <p>A mixed day and boarding Catholic secondary school providing quality, affordable education in the Archdiocese of Kampala.</p>
+                        <div class="hero-actions">
+                            <a href="admissions.html" class="btn btn-primary">Apply Today</a>
+                            <a href="about.html" class="btn btn-secondary">Our Story</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <img src="images/111140400dcf49f77eac3135006e9619.webp" alt="STALOS students in formal uniform">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section section-light stats-section">
+        <section class="section section-alt" style="padding-top: 0; margin-top: -2rem; position: relative; z-index: 5;">
             <div class="container">
-                <div class="stats-strip">
-                    <article class="stat-card reveal">
-                        <span class="stat-icon"><i class="fas fa-user-graduate" aria-hidden="true"></i></span>
-                        <strong data-count="549">0</strong>
-                        <p>Students</p>
-                    </article>
-                    <article class="stat-card reveal">
-                        <span class="stat-icon"><i class="fas fa-home" aria-hidden="true"></i></span>
-                        <strong>~50%</strong>
-                        <p>Boarding</p>
-                    </article>
-                    <article class="stat-card reveal">
-                        <span class="stat-icon"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i></span>
-                        <strong data-count="42">0</strong>
-                        <p>Teachers</p>
-                    </article>
-                    <article class="stat-card reveal">
-                        <span class="stat-icon"><i class="fas fa-calendar-alt" aria-hidden="true"></i></span>
-                        <strong data-count="40">0</strong>
-                        <p>Years of service</p>
-                    </article>
+                <div class="stats-row reveal">
+                    <div class="stat-item"><strong data-count="549">0</strong><span>Students</span></div>
+                    <div class="stat-item"><strong>~50%</strong><span>Boarding</span></div>
+                    <div class="stat-item"><strong data-count="42">0</strong><span>Teachers</span></div>
+                    <div class="stat-item"><strong data-count="40">0</strong><span>Years</span></div>
                 </div>
             </div>
         </section>
 
-        <section class="video-section section-light">
+        <section class="section section-alt">
             <div class="container">
-                <div class="section-heading">
-                    <h2>Experience STALOS</h2>
-                    <p>A glimpse of life on campus.</p>
-                </div>
-                <div class="video-wrap reveal">
-                    <video controls playsinline poster="images/111140400dcf49f77eac3135006e9619.webp" preload="metadata">
-                        <source src="images/734e76dd5fed60a41ad5c7fc9ee059fc.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-light">
-            <div class="container">
-                <div class="section-heading">
+                <div class="section-heading center">
                     <h2>Why families choose STALOS</h2>
-                    <p>A growing school with clear values, steady leadership, and a commitment to holistic education.</p>
+                    <p>Clear values, steady leadership, and holistic education for every student.</p>
                 </div>
                 <div class="grid grid-3">
-                    <article class="card feature-card reveal">
-                        <div class="feature-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+                    <article class="card reveal">
+                        <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
                         <h3>Quality Academics</h3>
-                        <p>O-Level and A-Level programmes with a focus on strong results and practical skills.</p>
+                        <p>O-Level and A-Level programmes focused on strong results and practical skills.</p>
                     </article>
-                    <article class="card feature-card reveal">
-                        <div class="feature-icon"><i class="fas fa-hands-helping" aria-hidden="true"></i></div>
+                    <article class="card reveal">
+                        <div class="card-icon"><i class="fas fa-cross"></i></div>
                         <h3>Values & Character</h3>
                         <p>Catholic foundation that welcomes all, forming disciplined, responsible young people.</p>
                     </article>
-                    <article class="card feature-card reveal">
-                        <div class="feature-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
+                    <article class="card reveal">
+                        <div class="card-icon"><i class="fas fa-hands-helping"></i></div>
                         <h3>Skills for Life</h3>
                         <p>Vocational training, music, sports, and clubs that prepare students beyond the classroom.</p>
                     </article>
@@ -120,36 +88,76 @@
 
         <section class="section">
             <div class="container">
-                <div class="section-heading">
-                    <h2>Growing with purpose</h2>
-                    <p>Recent improvements that make a real difference for students.</p>
-                </div>
-                <div class="grid grid-2">
-                    <div class="content-box reveal">
-                        <h3>Facilities</h3>
-                        <p>Main hall completed, reliable water system installed, kitchen and toilets renovated, classrooms and dormitories refreshed. A new multi-storey building and perimeter wall are the next priorities.</p>
-                    </div>
-                    <div class="content-box reveal">
-                        <h3>Student Life</h3>
-                        <p>Active music and choir tradition recognised across the Archdiocese, vocational skills programmes, games, clubs, and a revived Parents and Teachers Association working closely with the school.</p>
+                <div class="photo-feature reveal">
+                    <img src="images/c3d5e1a67b144c09a7540fd7436fcbb8.webp" alt="STALOS netball champions">
+                    <div class="photo-feature-text">
+                        <h3>Champions on and off the field</h3>
+                        <p>Sports, music, and co-curricular life are central to STALOS. Our teams compete with pride, and our choir is recognised across the Archdiocese.</p>
+                        <a href="gallery.html" class="btn btn-primary">View Gallery</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section section-light">
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-heading center">
+                    <h2>Experience campus life</h2>
+                    <p>A short look at STALOS in action.</p>
+                </div>
+                <div class="video-wrap reveal">
+                    <video controls playsinline poster="images/87ed807f10e74881b6d8960ab9ebb9a3.webp" preload="metadata">
+                        <source src="images/734e76dd5fed60a41ad5c7fc9ee059fc.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
             <div class="container">
                 <div class="section-heading">
+                    <h2>Growing with purpose</h2>
+                    <p>Recent improvements that make a real difference.</p>
+                </div>
+                <div class="grid grid-2">
+                    <div class="content-block reveal">
+                        <h3>Facilities</h3>
+                        <p>Main hall completed, reliable water system installed, kitchen and toilets renovated, classrooms and dormitories refreshed. Next priorities: multi-storey building and perimeter wall.</p>
+                    </div>
+                    <div class="content-block reveal">
+                        <h3>Student life</h3>
+                        <p>Active music tradition, vocational skills (DIT), games, clubs, and a strong Parents and Teachers Association working with the school.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="photo-feature reveal" style="direction: rtl;">
+                    <img src="images/87ed807f10e74881b6d8960ab9ebb9a3.webp" alt="STALOS class in blue uniforms" style="direction: ltr;">
+                    <div class="photo-feature-text" style="direction: ltr;">
+                        <h3>549 students · 42 teachers</h3>
+                        <p>Nearly half of our students board. They are supported by a dedicated teaching and non-teaching team under Head Teacher Mr. Matte Paul Remmy Kizito.</p>
+                        <a href="admissions.html" class="btn btn-primary">Admissions Info</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading center">
                     <h2>From our community</h2>
                 </div>
-                <div class="testimonial-grid">
-                    <article class="testimonial-card reveal">
+                <div class="grid grid-2">
+                    <article class="quote-card reveal">
                         <p>"STALOS was not just a place of learning; it was a community that nurtured my dreams, shaped my values, and equipped me with the skills to face the world."</p>
-                        <p class="testimonial-author">— Kiyaga Jude, Alumnus (Class of 2019)</p>
+                        <p class="quote-author">— Kiyaga Jude, Alumnus (Class of 2019)</p>
                     </article>
-                    <article class="testimonial-card reveal">
+                    <article class="quote-card reveal">
                         <p>"Your leadership has brought about significant improvements in academic performance, and we are proud to see our students shining both academically and in their personal development."</p>
-                        <p class="testimonial-author">— Rev. Fr. Charles Kiggundu, Parish Priest</p>
+                        <p class="quote-author">— Rev. Fr. Charles Kiggundu, Parish Priest</p>
                     </article>
                 </div>
             </div>
@@ -157,10 +165,10 @@
 
         <section class="site-cta">
             <div class="container">
-                <div class="cta-panel">
+                <div class="cta-inner">
                     <div>
-                        <span class="eyebrow">Join us</span>
-                        <h2>Ready to become part of the STALOS family?</h2>
+                        <div class="eyebrow">Join the STALOS family</div>
+                        <h2>Ready to apply or visit?</h2>
                     </div>
                     <div class="cta-actions">
                         <a href="admissions.html" class="btn btn-primary">Admissions</a>
@@ -172,9 +180,11 @@
     </main>
 
     <footer class="site-footer">
-        <div class="footer-inner">
-            <p class="footer-brand">St. Aloysius Senior Secondary School, Nabbingo</p>
-            <p class="footer-tagline">Knowledge is our strength</p>
+        <div class="container footer-inner">
+            <div>
+                <p class="footer-brand">St. Aloysius Senior Secondary School, Nabbingo</p>
+                <p class="footer-tagline">Knowledge is our strength</p>
+            </div>
             <div class="footer-links">
                 <a href="https://www.tiktok.com/@stalos_nabbingo" target="_blank" rel="noopener">TikTok</a>
                 <a href="contact.html">Contact</a>
@@ -183,7 +193,6 @@
     </footer>
 
     <button class="back-to-top" id="backToTop" aria-label="Back to top"></button>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const navToggle = document.querySelector('.nav-toggle');
