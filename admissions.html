@@ -29,33 +29,198 @@
     <main>
         <section class="section section-alt">
             <div class="container">
-                <div class="section-heading"><h2>Admissions</h2><p>Day and boarding places at O-Level and A-Level.</p></div>
+                <div class="section-heading">
+                    <h2>Admissions</h2>
+                    <p>Day and boarding places at O-Level and A-Level. Complete the form below to start your application.</p>
+                </div>
                 <div class="grid grid-2">
-                    <div class="content-block"><h3>Who we admit</h3><p>Mixed school — boys and girls, day and boarding, subject to capacity.</p></div>
-                    <div class="content-block"><h3>How to apply</h3><p>Contact the school office for requirements and vacancies. Visits are encouraged.</p></div>
+                    <div class="content-block">
+                        <h3>Who we admit</h3>
+                        <p>Mixed school — boys and girls, day and boarding, subject to capacity.</p>
+                    </div>
+                    <div class="content-block">
+                        <h3>Fees overview</h3>
+                        <p>O-Level day UGX 280,000 · boarding UGX 550,000<br>A-Level day UGX 300,000 · boarding UGX 650,000<br><small>Confirm with the bursar for the current term.</small></p>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="section">
+
+        <section class="section" id="apply">
             <div class="container">
-                <div class="section-heading"><h2>Fees overview</h2><p>From the 2025 magazine — confirm with the bursar.</p></div>
-                <div class="grid grid-2">
-                    <div class="content-block"><h3>O-Level</h3><ul><li>Day: UGX 280,000</li><li>Boarding: UGX 550,000</li></ul></div>
-                    <div class="content-block"><h3>A-Level</h3><ul><li>Day: UGX 300,000</li><li>Boarding: UGX 650,000</li></ul></div>
+                <div class="section-heading">
+                    <h2>Application form</h2>
+                    <p>Fill in the details and submit. The school office will contact you.</p>
                 </div>
+
+                <form class="admit-form" id="admitForm" novalidate>
+                    <div class="form-section-label">Student details</div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="studentName">Student full name <span>*</span></label>
+                            <input type="text" id="studentName" name="studentName" required placeholder="As on birth certificate">
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender <span>*</span></label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select</option>
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of birth</label>
+                            <input type="date" id="dob" name="dob">
+                        </div>
+                        <div class="form-group">
+                            <label for="level">Level applying for <span>*</span></label>
+                            <select id="level" name="level" required>
+                                <option value="">Select</option>
+                                <option value="O-Level (S1–S4)">O-Level (S1–S4)</option>
+                                <option value="A-Level (S5–S6)">A-Level (S5–S6)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="classEntry">Preferred class / entry</label>
+                            <select id="classEntry" name="classEntry">
+                                <option value="">Select</option>
+                                <option value="S1">S1</option>
+                                <option value="S2">S2</option>
+                                <option value="S3">S3</option>
+                                <option value="S4">S4</option>
+                                <option value="S5">S5</option>
+                                <option value="S6">S6</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="residence">Day or boarding <span>*</span></label>
+                            <select id="residence" name="residence" required>
+                                <option value="">Select</option>
+                                <option value="Day">Day</option>
+                                <option value="Boarding">Boarding</option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <label for="previousSchool">Previous school</label>
+                            <input type="text" id="previousSchool" name="previousSchool" placeholder="Name of last school attended">
+                        </div>
+                    </div>
+
+                    <div class="form-section-label">Parent / guardian</div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="parentName">Parent / guardian name <span>*</span></label>
+                            <input type="text" id="parentName" name="parentName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="relationship">Relationship</label>
+                            <select id="relationship" name="relationship">
+                                <option value="Parent">Parent</option>
+                                <option value="Guardian">Guardian</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone number <span>*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+256 7..">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="optional">
+                        </div>
+                        <div class="form-group full">
+                            <label for="address">Home / address</label>
+                            <input type="text" id="address" name="address" placeholder="Village, town, district">
+                        </div>
+                        <div class="form-group full">
+                            <label for="message">Additional notes</label>
+                            <textarea id="message" name="message" rows="3" placeholder="Any questions or special requests"></textarea>
+                        </div>
+                    </div>
+
+                    <p class="form-note">This form opens your email app with the details ready to send to the school office. You can also call <strong>+256 782 267719</strong>.</p>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit application</button>
+                        <a href="tel:+256782267719" class="btn btn-outline">Call school</a>
+                    </div>
+                    <p class="form-success" id="formSuccess" hidden>Thank you. Your email app should open with the application. If it does not, please call or email the school directly.</p>
+                </form>
             </div>
         </section>
+
         <section class="site-cta">
-            <div class="container"><div class="cta-inner">
-                <div><div class="eyebrow">Next steps</div><h2>Contact the school</h2></div>
-                <div class="cta-actions"><a href="contact.html" class="btn btn-primary">Contact</a><a href="about.html" class="btn btn-secondary">About</a></div>
-            </div></div>
+            <div class="container">
+                <div class="cta-inner">
+                    <div>
+                        <div class="eyebrow">Visit us</div>
+                        <h2>School office · Nabbingo</h2>
+                    </div>
+                    <div class="cta-actions">
+                        <a href="contact.html" class="btn btn-primary">Contact details</a>
+                        <a href="about.html" class="btn btn-secondary">About STALOS</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer class="site-footer"><div class="container footer-inner"><div><p class="footer-brand">St. Aloysius Senior Secondary School, Nabbingo</p><p class="footer-tagline">Knowledge is our strength</p></div><div class="footer-links"><a href="contact.html">Contact</a></div></div></footer>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <p class="footer-brand">St. Aloysius Senior Secondary School, Nabbingo</p>
+                <p class="footer-tagline">Knowledge is our strength</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.tiktok.com/@stalos_nabbingo" target="_blank" rel="noopener">TikTok</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
     <button class="back-to-top" id="backToTop" aria-label="Back to top"></button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>const b=document.getElementById('backToTop');window.addEventListener('scroll',()=>b.classList.toggle('show',window.pageYOffset>300));b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));b.innerHTML='<i class="fas fa-arrow-up"></i>';</script>
+    <script>
+        const b = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => b.classList.toggle('show', window.pageYOffset > 300));
+        b.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        b.innerHTML = '<i class="fas fa-arrow-up"></i>';
+
+        document.getElementById('admitForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const f = e.target;
+            if (!f.checkValidity()) {
+                f.reportValidity();
+                return;
+            }
+            const val = (id) => (document.getElementById(id).value || '').trim();
+            const body = [
+                'STALOS ADMISSION APPLICATION',
+                '----------------------------',
+                'Student: ' + val('studentName'),
+                'Gender: ' + val('gender'),
+                'Date of birth: ' + val('dob'),
+                'Level: ' + val('level'),
+                'Class: ' + val('classEntry'),
+                'Day/Boarding: ' + val('residence'),
+                'Previous school: ' + val('previousSchool'),
+                '',
+                'Parent/Guardian: ' + val('parentName'),
+                'Relationship: ' + val('relationship'),
+                'Phone: ' + val('phone'),
+                'Email: ' + val('email'),
+                'Address: ' + val('address'),
+                '',
+                'Notes: ' + val('message')
+            ].join('\n');
+
+            const subject = encodeURIComponent('Admission application — ' + val('studentName'));
+            const mailto = 'mailto:stalos2017nabbingo@gmail.com?subject=' + subject + '&body=' + encodeURIComponent(body);
+            window.location.href = mailto;
+
+            const ok = document.getElementById('formSuccess');
+            ok.hidden = false;
+            ok.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    </script>
     <script src="scripts.js" defer></script>
 </body>
 </html>
