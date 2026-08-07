@@ -31,7 +31,7 @@
             <div class="container">
                 <div class="section-heading">
                     <h2>Admissions</h2>
-                    <p>Day and boarding places at O-Level and A-Level. Complete the form below to start your application.</p>
+                    <p>Day and boarding places at O-Level and A-Level.</p>
                 </div>
                 <div class="grid grid-2">
                     <div class="content-block">
@@ -48,103 +48,139 @@
 
         <section class="section" id="apply">
             <div class="container">
-                <div class="section-heading">
-                    <h2>Application form</h2>
-                    <p>Fill in the details and submit. The school office will contact you.</p>
+                <div class="section-heading center">
+                    <h2>Apply online</h2>
+                    <p>Complete the form. We will get back to you using the contacts you provide.</p>
                 </div>
 
                 <form class="admit-form" id="admitForm" novalidate>
-                    <div class="form-section-label">Student details</div>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="studentName">Student full name <span>*</span></label>
-                            <input type="text" id="studentName" name="studentName" required placeholder="As on birth certificate">
-                        </div>
-                        <div class="form-group">
-                            <label for="gender">Gender <span>*</span></label>
-                            <select id="gender" name="gender" required>
-                                <option value="">Select</option>
-                                <option value="Female">Female</option>
-                                <option value="Male">Male</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="dob">Date of birth</label>
-                            <input type="date" id="dob" name="dob">
-                        </div>
-                        <div class="form-group">
-                            <label for="level">Level applying for <span>*</span></label>
-                            <select id="level" name="level" required>
-                                <option value="">Select</option>
-                                <option value="O-Level (S1–S4)">O-Level (S1–S4)</option>
-                                <option value="A-Level (S5–S6)">A-Level (S5–S6)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="classEntry">Preferred class / entry</label>
-                            <select id="classEntry" name="classEntry">
-                                <option value="">Select</option>
-                                <option value="S1">S1</option>
-                                <option value="S2">S2</option>
-                                <option value="S3">S3</option>
-                                <option value="S4">S4</option>
-                                <option value="S5">S5</option>
-                                <option value="S6">S6</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="residence">Day or boarding <span>*</span></label>
-                            <select id="residence" name="residence" required>
-                                <option value="">Select</option>
-                                <option value="Day">Day</option>
-                                <option value="Boarding">Boarding</option>
-                            </select>
-                        </div>
-                        <div class="form-group full">
-                            <label for="previousSchool">Previous school</label>
-                            <input type="text" id="previousSchool" name="previousSchool" placeholder="Name of last school attended">
+                    <div class="form-banner">
+                        <div class="form-banner-icon"><i class="fas fa-file-alt"></i></div>
+                        <div>
+                            <strong>STALOS application</strong>
+                            <p>St. Aloysius Senior Secondary School, Nabbingo</p>
                         </div>
                     </div>
 
-                    <div class="form-section-label">Parent / guardian</div>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="parentName">Parent / guardian name <span>*</span></label>
-                            <input type="text" id="parentName" name="parentName" required>
+                    <div class="form-block">
+                        <div class="form-block-head">
+                            <span class="form-step">1</span>
+                            <div>
+                                <h3>Student details</h3>
+                                <p>About the learner</p>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="relationship">Relationship</label>
-                            <select id="relationship" name="relationship">
-                                <option value="Parent">Parent</option>
-                                <option value="Guardian">Guardian</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone number <span>*</span></label>
-                            <input type="tel" id="phone" name="phone" required placeholder="+256 7..">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="optional">
-                        </div>
-                        <div class="form-group full">
-                            <label for="address">Home / address</label>
-                            <input type="text" id="address" name="address" placeholder="Village, town, district">
-                        </div>
-                        <div class="form-group full">
-                            <label for="message">Additional notes</label>
-                            <textarea id="message" name="message" rows="3" placeholder="Any questions or special requests"></textarea>
+                        <div class="form-grid">
+                            <div class="form-group full">
+                                <label for="studentName">Full name <span>*</span></label>
+                                <input type="text" id="studentName" name="studentName" required autocomplete="name" placeholder="As on birth certificate">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender <span>*</span></label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select gender</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Male">Male</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">Date of birth</label>
+                                <input type="date" id="dob" name="dob">
+                            </div>
+                            <div class="form-group">
+                                <label for="level">Level <span>*</span></label>
+                                <select id="level" name="level" required>
+                                    <option value="">Select level</option>
+                                    <option value="O-Level (S1–S4)">O-Level (S1–S4)</option>
+                                    <option value="A-Level (S5–S6)">A-Level (S5–S6)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="classEntry">Entry class</label>
+                                <select id="classEntry" name="classEntry">
+                                    <option value="">Select class</option>
+                                    <option value="S1">S1</option>
+                                    <option value="S2">S2</option>
+                                    <option value="S3">S3</option>
+                                    <option value="S4">S4</option>
+                                    <option value="S5">S5</option>
+                                    <option value="S6">S6</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="residence">Residence <span>*</span></label>
+                                <select id="residence" name="residence" required>
+                                    <option value="">Day or boarding</option>
+                                    <option value="Day">Day scholar</option>
+                                    <option value="Boarding">Boarding</option>
+                                </select>
+                            </div>
+                            <div class="form-group full">
+                                <label for="previousSchool">Previous school</label>
+                                <input type="text" id="previousSchool" name="previousSchool" placeholder="Name of last school attended">
+                            </div>
                         </div>
                     </div>
 
-                    <p class="form-note">This form opens your email app with the details ready to send to the school office. You can also call <strong>+256 782 267719</strong>.</p>
-
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Submit application</button>
-                        <a href="tel:+256782267719" class="btn btn-outline">Call school</a>
+                    <div class="form-block">
+                        <div class="form-block-head">
+                            <span class="form-step">2</span>
+                            <div>
+                                <h3>Parent / guardian</h3>
+                                <p>Contact person for this application</p>
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="parentName">Full name <span>*</span></label>
+                                <input type="text" id="parentName" name="parentName" required autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="relationship">Relationship</label>
+                                <select id="relationship" name="relationship">
+                                    <option value="Parent">Parent</option>
+                                    <option value="Guardian">Guardian</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone <span>*</span></label>
+                                <input type="tel" id="phone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="+256 7…">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" autocomplete="email" placeholder="optional@email.com">
+                            </div>
+                            <div class="form-group full">
+                                <label for="address">Home address</label>
+                                <input type="text" id="address" name="address" placeholder="Village, town, district">
+                            </div>
+                            <div class="form-group full">
+                                <label for="message">Message to the school</label>
+                                <textarea id="message" name="message" rows="3" placeholder="Questions or special requests (optional)"></textarea>
+                            </div>
+                        </div>
                     </div>
-                    <p class="form-success" id="formSuccess" hidden>Thank you. Your email app should open with the application. If it does not, please call or email the school directly.</p>
+
+                    <div class="form-footer">
+                        <p class="form-note">
+                            <i class="fas fa-info-circle"></i>
+                            Submit opens your email with the application ready for <strong>stalos2017nabbingo@gmail.com</strong>.
+                            Or call <a href="tel:+256782267719">+256 782 267719</a>.
+                        </p>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <i class="fas fa-paper-plane"></i> Submit application
+                            </button>
+                            <a href="tel:+256782267719" class="btn btn-outline">
+                                <i class="fas fa-phone"></i> Call school
+                            </a>
+                        </div>
+                        <p class="form-success" id="formSuccess" hidden>
+                            <i class="fas fa-check-circle"></i>
+                            Thank you. Your email app should open with the application. If it does not, please call or email the school.
+                        </p>
+                    </div>
                 </form>
             </div>
         </section>
@@ -213,8 +249,7 @@
             ].join('\n');
 
             const subject = encodeURIComponent('Admission application — ' + val('studentName'));
-            const mailto = 'mailto:stalos2017nabbingo@gmail.com?subject=' + subject + '&body=' + encodeURIComponent(body);
-            window.location.href = mailto;
+            window.location.href = 'mailto:stalos2017nabbingo@gmail.com?subject=' + subject + '&body=' + encodeURIComponent(body);
 
             const ok = document.getElementById('formSuccess');
             ok.hidden = false;
