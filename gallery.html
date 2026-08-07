@@ -8,21 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="interactive.css">
-    <style>
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
-        .gallery-item { position: relative; border-radius: 16px; overflow: hidden; background: #eef4ff; box-shadow: 0 12px 30px rgba(37, 99, 235, 0.1); aspect-ratio: 4/3; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s ease; }
-        .gallery-item:hover img { transform: scale(1.05); }
-        .gallery-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.85rem 1rem; background: linear-gradient(transparent, rgba(15, 23, 42, 0.85)); color: #fff; font-size: 0.9rem; font-weight: 500; }
-        .gallery-section-title { margin: 2.5rem 0 1.25rem; font-size: 1.25rem; font-weight: 700; color: #1d4ed8; }
-    </style>
 </head>
 <body>
     <header class="site-header">
         <div class="container header-inner">
-            <a href="index.html" class="brand">STALOS</a>
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="brand">ST<span>ALOS</span></a>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
             <nav role="navigation">
                 <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
@@ -37,17 +28,17 @@
         </div>
     </header>
     <main>
-        <section class="section section-light">
+        <section class="section section-alt">
             <div class="container">
                 <div class="section-heading">
                     <h2>Gallery</h2>
-                    <p>Real moments from campus life. Click any photo to enlarge.</p>
+                    <p>Campus life at STALOS. Click any photo to enlarge.</p>
                 </div>
-                <h3 class="gallery-section-title">School life & classes</h3>
+                <h3 class="gallery-section-title">School life</h3>
                 <div class="gallery-grid">
-                    <figure class="gallery-item"><img src="images/111140400dcf49f77eac3135006e9619.webp" alt="Formal class group" loading="lazy"><figcaption class="gallery-caption">Class group — formal uniform</figcaption></figure>
+                    <figure class="gallery-item"><img src="images/111140400dcf49f77eac3135006e9619.webp" alt="Formal class group" loading="lazy"><figcaption class="gallery-caption">Formal uniform — class group</figcaption></figure>
                     <figure class="gallery-item"><img src="images/00f308615838a351cea3771930b8c26a.webp" alt="Girls in uniform" loading="lazy"><figcaption class="gallery-caption">Girls in school uniform</figcaption></figure>
-                    <figure class="gallery-item"><img src="images/87ed807f10e74881b6d8960ab9ebb9a3.webp" alt="Blue uniforms class" loading="lazy"><figcaption class="gallery-caption">Class photo — blue uniforms</figcaption></figure>
+                    <figure class="gallery-item"><img src="images/87ed807f10e74881b6d8960ab9ebb9a3.webp" alt="Blue uniforms" loading="lazy"><figcaption class="gallery-caption">Class photo — blue uniforms</figcaption></figure>
                     <figure class="gallery-item"><img src="images/23fd844a330c6e914e0ca403e4899e27.webp" alt="Student leaders" loading="lazy"><figcaption class="gallery-caption">Student leadership</figcaption></figure>
                 </div>
                 <h3 class="gallery-section-title">Sports</h3>
@@ -55,13 +46,13 @@
                     <figure class="gallery-item"><img src="images/c3d5e1a67b144c09a7540fd7436fcbb8.webp" alt="Netball champions" loading="lazy"><figcaption class="gallery-caption">Netball champions</figcaption></figure>
                     <figure class="gallery-item"><img src="images/75c2b1f202acbc43d66a593fbe31419e.webp" alt="Football champions" loading="lazy"><figcaption class="gallery-caption">Football champions</figcaption></figure>
                 </div>
-                <h3 class="gallery-section-title">Music & performance</h3>
+                <h3 class="gallery-section-title">Music</h3>
                 <div class="gallery-grid">
                     <figure class="gallery-item"><img src="images/cae435c0f5e838c0e23ef6ee493e795d.webp" alt="Violin" loading="lazy"><figcaption class="gallery-caption">Violin performance</figcaption></figure>
                     <figure class="gallery-item"><img src="images/952ef2fcdbc6ffce2f16046073ff5575.webp" alt="Keyboard" loading="lazy"><figcaption class="gallery-caption">Keyboard & vocals</figcaption></figure>
                     <figure class="gallery-item"><img src="images/8201e837933939cd713046bff5e7147c.webp" alt="Band" loading="lazy"><figcaption class="gallery-caption">Band & traditional music</figcaption></figure>
                 </div>
-                <h3 class="gallery-section-title">Vocational skills & arts</h3>
+                <h3 class="gallery-section-title">Vocational & arts</h3>
                 <div class="gallery-grid">
                     <figure class="gallery-item"><img src="images/3ac97dd791309c6cc9edc7f125c3c21d.webp" alt="Plumbing" loading="lazy"><figcaption class="gallery-caption">DIT — Plumbing</figcaption></figure>
                     <figure class="gallery-item"><img src="images/4929bd3594155b87d9bf9edda7da2732.webp" alt="Art" loading="lazy"><figcaption class="gallery-caption">Art students</figcaption></figure>
@@ -75,8 +66,8 @@
         </section>
         <section class="site-cta">
             <div class="container">
-                <div class="cta-panel">
-                    <div><span class="eyebrow">More moments</span><h2>Follow daily school life on TikTok</h2></div>
+                <div class="cta-inner">
+                    <div><div class="eyebrow">More moments</div><h2>Follow STALOS on TikTok</h2></div>
                     <div class="cta-actions">
                         <a href="https://www.tiktok.com/@stalos_nabbingo" class="btn btn-primary" target="_blank" rel="noopener">@stalos_nabbingo</a>
                         <a href="contact.html" class="btn btn-secondary">Contact</a>
@@ -86,9 +77,11 @@
         </section>
     </main>
     <footer class="site-footer">
-        <div class="footer-inner">
-            <p class="footer-brand">St. Aloysius Senior Secondary School, Nabbingo</p>
-            <p class="footer-tagline">Knowledge is our strength</p>
+        <div class="container footer-inner">
+            <div>
+                <p class="footer-brand">St. Aloysius Senior Secondary School, Nabbingo</p>
+                <p class="footer-tagline">Knowledge is our strength</p>
+            </div>
             <div class="footer-links">
                 <a href="https://www.tiktok.com/@stalos_nabbingo" target="_blank" rel="noopener">TikTok</a>
                 <a href="contact.html">Contact</a>
