@@ -14,7 +14,6 @@
     <header class="site-header">
         <div class="container header-inner">
             <a href="index.html" class="brand">ST<span>ALOS</span></a>
-            <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
             <nav role="navigation">
                 <ul class="nav-list">
                     <li><a href="index.html" class="active">Home</a></li>
@@ -34,6 +33,7 @@
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-text">
+                        <div class="live-badge">Campus life</div>
                         <span class="eyebrow">Nabbingo · Founded 1986 · 40 Years</span>
                         <h1>Knowledge is our strength</h1>
                         <p>A mixed day and boarding Catholic secondary school providing quality, affordable education in the Archdiocese of Kampala.</p>
@@ -88,6 +88,21 @@
 
         <section class="section">
             <div class="container">
+                <div class="section-heading center">
+                    <h2>Life at STALOS</h2>
+                    <p>Students, sports, music, and skills — every day on campus.</p>
+                </div>
+                <div class="photo-strip reveal">
+                    <img src="images/00f308615838a351cea3771930b8c26a.webp" alt="Girls in uniform" loading="lazy">
+                    <img src="images/75c2b1f202acbc43d66a593fbe31419e.webp" alt="Football champions" loading="lazy">
+                    <img src="images/cae435c0f5e838c0e23ef6ee493e795d.webp" alt="Violin" loading="lazy">
+                    <img src="images/3ac97dd791309c6cc9edc7f125c3c21d.webp" alt="DIT plumbing" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
                 <div class="photo-feature reveal">
                     <img src="images/c3d5e1a67b144c09a7540fd7436fcbb8.webp" alt="STALOS netball champions">
                     <div class="photo-feature-text">
@@ -99,7 +114,7 @@
             </div>
         </section>
 
-        <section class="section section-alt">
+        <section class="section">
             <div class="container">
                 <div class="section-heading center">
                     <h2>Experience campus life</h2>
@@ -113,7 +128,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section section-alt">
             <div class="container">
                 <div class="section-heading">
                     <h2>Growing with purpose</h2>
@@ -132,7 +147,7 @@
             </div>
         </section>
 
-        <section class="section section-alt">
+        <section class="section">
             <div class="container">
                 <div class="photo-feature reveal" style="direction: rtl;">
                     <img src="images/87ed807f10e74881b6d8960ab9ebb9a3.webp" alt="STALOS class in blue uniforms" style="direction: ltr;">
@@ -145,7 +160,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section section-alt">
             <div class="container">
                 <div class="section-heading center">
                     <h2>From our community</h2>
@@ -195,18 +210,6 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top"></button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const navToggle = document.querySelector('.nav-toggle');
-        const body = document.body;
-        navToggle.addEventListener('click', () => {
-            body.classList.toggle('nav-open');
-            navToggle.setAttribute('aria-expanded', body.classList.contains('nav-open'));
-        });
-        document.querySelectorAll('.nav-list a').forEach(link => {
-            link.addEventListener('click', () => {
-                body.classList.remove('nav-open');
-                navToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             backToTopBtn.classList.toggle('show', window.pageYOffset > 300);
