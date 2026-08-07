@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     counters.forEach((c) => obs.observe(c));
   }
 
-  // Gallery lightbox — works with .gallery-item and .gallery-card
+  // Gallery lightbox
   const items = document.querySelectorAll('.gallery-item img, .gallery-card img');
   if (items.length) {
     const overlay = document.createElement('div');
@@ -59,9 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
     items.forEach((img) => {
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', () => {
+        if (!img.complete || img.naturalWidth === 0) return;
         const fig = img.closest('figure');
         const cap = fig ? fig.querySelector('.gallery-caption') : null;
-        open(img.src, img.alt, cap ? cap.textContent : '');
+        open(img.currentSrc || img.src, img.alt, cap ? cap.textContent : '');
       });
     });
     closeBtn.addEventListener('click', close);
