@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
     counters.forEach((c) => obs.observe(c));
   }
 
-  // Gallery lightbox
-  const items = document.querySelectorAll('.gallery-item img');
+  // Gallery lightbox — works with .gallery-item and .gallery-card
+  const items = document.querySelectorAll('.gallery-item img, .gallery-card img');
   if (items.length) {
     const overlay = document.createElement('div');
     overlay.className = 'lightbox';
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', () => {
         const fig = img.closest('figure');
-        const cap = fig ? fig.querySelector('.gallery-caption');
+        const cap = fig ? fig.querySelector('.gallery-caption') : null;
         open(img.src, img.alt, cap ? cap.textContent : '');
       });
     });
@@ -81,34 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }, { threshold: 0.12 });
     reveals.forEach((el) => ro.observe(el));
-  }
-
-  // Movable nav: hide when scrolling down, show when scrolling up
-  const header = document.querySelector('.site-header');
-  if (header) {
-    let lastY = window.pageYOffset || 0;
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const y = window.pageYOffset || 0;
-        if (y > lastY && y > 80) {
-          header.classList.add('nav-hidden');
-        } else {
-          header.classList.remove('nav-hidden');
-        }
-        lastY = y;
-        ticking = false;
-      });
-    }, { passive: true });
-
-    // On mobile: scroll active nav link into view
-    const active = header.querySelector('.nav-list a.active');
-    if (active && active.scrollIntoView) {
-      setTimeout(() => {
-        active.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
-      }, 100);
-    }
+  } else {
+    reveals.forEach((el) => el.classList.add('revealed'));
   }
 });
