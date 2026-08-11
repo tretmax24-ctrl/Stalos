@@ -1,15 +1,88 @@
 // STALOS interactive scripts
 document.addEventListener('DOMContentLoaded', function () {
+  // Animated counters
   const counters = document.querySelectorAll('[data-count]');
-  const animateCounter = (el) => { const target=parseInt(el.getAttribute('data-count'),10); if(isNaN(target))return; const duration=1400,start=performance.now(); const step=now=>{const progress=Math.min((now-start)/duration,1),eased=1-Math.pow(1-progress,3);el.textContent=Math.floor(eased*target).toLocaleString();if(progress<1)requestAnimationFrame(step);else el.textContent=target.toLocaleString()};requestAnimationFrame(step); };
-  if(counters.length&&'IntersectionObserver'in window){const obs=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){animateCounter(entry.target);obs.unobserve(entry.target)}}),{threshold:.4});counters.forEach(c=>obs.observe(c));}
-  const items=document.querySelectorAll('.gallery-item img, .gallery-card img');
-  if(items.length){const overlay=document.createElement('div');overlay.className='lightbox';overlay.innerHTML='<button class="lightbox-close" aria-label="Close">&times;</button><img src="" alt=""><p class="lightbox-caption"></p>';document.body.appendChild(overlay);const lbImg=overlay.querySelector('img'),lbCap=overlay.querySelector('.lightbox-caption'),closeBtn=overlay.querySelector('.lightbox-close');const open=(src,alt,caption)=>{lbImg.src=src;lbImg.alt=alt||'';lbCap.textContent=caption||alt||'';overlay.classList.add('open');document.body.style.overflow='hidden'},close=()=>{overlay.classList.remove('open');document.body.style.overflow=''};items.forEach(img=>{img.style.cursor='zoom-in';img.addEventListener('click',()=>{if(!img.complete||img.naturalWidth===0)return;const fig=img.closest('figure'),cap=fig?fig.querySelector('.gallery-caption'):null;open(img.currentSrc||img.src,img.alt,cap?cap.textContent:'')})});closeBtn.addEventListener('click',close);overlay.addEventListener('click',e=>{if(e.target===overlay)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()})}
-  const reveals=document.querySelectorAll('.reveal');if(reveals.length&&'IntersectionObserver'in window){const ro=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('revealed');ro.unobserve(entry.target)}}),{threshold:.12});reveals.forEach(el=>ro.observe(el))}else reveals.forEach(el=>el.classList.add('revealed'));
+  const animateCounter = (el) => {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    if (isNaN(target)) return;
+    const duration = 1400;
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target).toLocaleString();
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString();
+    };
+    requestAnimationFrame(step);
+  };
 
-  // Every public page gets the same production CMS bridge. index.html already includes it, so avoid loading it twice there.
-  if(!document.querySelector('script[src="cms.js"]')){
-    const loadCms=()=>{if(document.querySelector('script[data-stalos-cms]'))return;const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/tretmax24-ctrl/Stalos@main/cms.js';s.dataset.stalosCms='1';document.head.appendChild(s)};
-    if(window.supabase)loadCms();else{const sb=document.createElement('script');sb.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';sb.onload=loadCms;document.head.appendChild(sb)}
+  if (counters.length && 'IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach((c) => obs.observe(c));
+  }
+
+  // Gallery lightbox
+  const items = document.querySelectorAll('.gallery-item img, .gallery-card img');
+  if (items.length) {
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox';
+    overlay.innerHTML = `
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <img src="" alt="">
+      <p class="lightbox-caption"></p>
+    `;
+    document.body.appendChild(overlay);
+    const lbImg = overlay.querySelector('img');
+    const lbCap = overlay.querySelector('.lightbox-caption');
+    const closeBtn = overlay.querySelector('.lightbox-close');
+
+    const open = (src, alt, caption) => {
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lbCap.textContent = caption || alt || '';
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+
+    items.forEach((img) => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        if (!img.complete || img.naturalWidth === 0) return;
+        const fig = img.closest('figure');
+        const cap = fig ? fig.querySelector('.gallery-caption') : null;
+        open(img.currentSrc || img.src, img.alt, cap ? cap.textContent : '');
+      });
+    });
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  }
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  if (reveals.length && 'IntersectionObserver' in window) {
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          ro.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach((el) => ro.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add('revealed'));
   }
 });
