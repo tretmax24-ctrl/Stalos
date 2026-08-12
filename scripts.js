@@ -2,8 +2,11 @@
 document.addEventListener('DOMContentLoaded', function () {
   const counters = document.querySelectorAll('[data-count]');
   const animateCounter = (el) => {
-    const target = parseInt(el.getAttribute('data-count'), 10);
+    const cmsText = el.textContent.trim().replace(/,/g, '');
+    const attrTarget = el.getAttribute('data-count');
+    const target = /^\d+$/.test(cmsText) && cmsText !== '0' ? parseInt(cmsText, 10) : parseInt(attrTarget, 10);
     if (isNaN(target)) return;
+    el.setAttribute('data-count', String(target));
     const duration = 1400, start = performance.now();
     const step = (now) => { const progress=Math.min((now-start)/duration,1), eased=1-Math.pow(1-progress,3); el.textContent=Math.floor(eased*target).toLocaleString(); if(progress<1)requestAnimationFrame(step); else el.textContent=target.toLocaleString(); };
     requestAnimationFrame(step);
