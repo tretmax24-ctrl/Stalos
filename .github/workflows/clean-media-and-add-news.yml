@@ -1,0 +1,46 @@
+name: Finalize public navigation and remove Media Library
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Remove Media Library UI and add News navigation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('admin-dashboard.html')
+          if p.exists():
+              s=p.read_text()
+              s=s.replace('<button data-p="media">▣ Media Library</button>','')
+              s=s.replace('<div class="card"><h3>Media Library</h3><p class="hint">Upload an image once and keep it available for reuse across the site.</p><button class="save" onclick="go(\'media\')">Open media library</button></div>','')
+              s=s.replace('<section id="media" class="page"><div class="card"><h2>Media Library</h2><p class="hint">Central image storage. Upload and manage reusable photos without disturbing Events or Gallery.</p><iframe class="media-frame" src="media-library.html" title="STALOS Media Library"></iframe></div></section>','')
+              s=s.replace("p==='media'?'Media Library':",'')
+              s=s.replace(";if(p==='events')loadEvents();if(p==='gallery')loadGallery()", ";if(p==='events')loadEvents();if(p==='gallery')loadGallery()")
+              p.write_text(s)
+          for p in Path('.').glob('*.html'):
+              if p.name in {'admin.html','admin-dashboard.html','news.html'}: continue
+              s=p.read_text()
+              if 'href="news.html"' not in s and '<ul class="nav-list">' in s:
+                  marker='<li><a href="events.html">Events</a></li>'
+                  if marker in s:
+                      s=s.replace(marker, marker+'<li><a href="news.html">News</a></li>',1)
+                  p.write_text(s)
+          PY
+      - name: Commit final cleanup
+        run: |
+          git config user.name "STALOS Automation"
+          git config user.email "actions@github.com"
+          git add admin-dashboard.html *.html
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Remove Media Library and add News navigation"
+          git push
