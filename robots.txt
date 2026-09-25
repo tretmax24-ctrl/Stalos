@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /admin-dashboard.html
+Disallow: /admin-dashboard-pro.html
+Disallow: /admin-home.html
+Disallow: /forgot-password.html
+Disallow: /reset-password.html
+
+Sitemap: https://tretmax24-ctrl.github.io/Stalos/sitemap.xml
